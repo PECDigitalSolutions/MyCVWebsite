@@ -15,6 +15,8 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
+        ViewData["WelcomeMessage"] = "Welcome to My CV Website!";
+        ViewData["RecentClients"] = new List<string> { "ITAB", "Ammizing.se" };
         return View();
     }
 

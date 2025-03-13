@@ -1,8 +1,30 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    var welcomeMessage = ViewData["WelcomeMessage"] as string ?? "Welcome to My CV Website!";
+    var recentClients = ViewData["RecentClients"] as List<string> ?? new List<string>();
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome Philip</h1>
+    <h1 class="display-4">@welcomeMessage</h1>
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<div class="recent-projects">
+    <h2>Recent Clients</h2>
+    <ul>
+        @foreach (var client in recentClients)
+        {
+            <li>@client</li>
+        }
+    </ul>
+</div>
+
+<div class="text-center">
+    <a asp-controller="Projects" asp-action="Index" class="btn btn-primary">View All Projects</a>
+</div>
+<div class="text-center">
+    <a asp-controller="Contact" asp-action="Index" class="btn btn-primary">View Contact</a>
+</div>
+<div class="text-center">
+    <a asp-controller="About" asp-action="Index" class="btn btn-primary">View About</a>
 </div>

@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "About Me";
+    var skills = ViewData["Skills"] as List<string> ?? new List<string>();
+}
+
+<div class="about">
+    <h1>@ViewData["Title"]</h1>
+    <p>Hi, I'm Philip. I'm a software developer with experience in...</p>
+    <h2>Skills</h2>
+    <ul>
+        @foreach (var skill in skills)
+        {
+            <li>@skill</li>
+        }
+    </ul>
+</div>
